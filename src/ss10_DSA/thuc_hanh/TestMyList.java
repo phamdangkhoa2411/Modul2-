@@ -1,5 +1,5 @@
 package ss10_DSA.thuc_hanh;
-
+import java.util.Scanner;
 public class TestMyList {
     public static void main(String[] args) {
         MyList<Integer> myList = new MyList<>(5);
