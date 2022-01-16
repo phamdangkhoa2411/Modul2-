@@ -5,8 +5,7 @@ import java.util.Stack;
 
 public class ReverseElementIntergerArray {
     public static void main(String[] args) {
-
-//Đảo ngược phần tử trong mảng số nguyên sử dụng Stack
+        //Đảo ngược phần tử trong mảng số nguyên sử dụng Stack
         Stack<Integer> myStack = new Stack<>();
         Integer[] integer = new Integer[3];
         integer[0] = myStack.push(1);
