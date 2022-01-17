@@ -12,12 +12,12 @@ public class XeTaiServiceimpl implements XeTaiService {
     Scanner scanner = new Scanner(System.in);
 
     @Override
-    public void deleteXeTai() {
+    public  void deleteXeTai() {
 
     }
 
     @Override
-    public void addNewXeTai() {
+    public  void addNewXeTai() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("nhập biển số xe máy ");
         String BienSoXe = scanner.nextLine();
@@ -29,11 +29,14 @@ public class XeTaiServiceimpl implements XeTaiService {
         String ChuXe = scanner.nextLine();
         System.out.println("nhập trọng tải của xe");
         String TrongTai = scanner.nextLine();
+        XeTai xeTai = new XeTai(BienSoXe,namehang,YearOfmanuFacture,ChuXe,TrongTai);
+        xeTaiList.add(xeTai);
+
 
     }
 
     @Override
-    public void displayXeTai() {
+    public  void displayXeTai() {
         for (XeTai xeTai: xeTaiList ) {
             System.out.println(xeTai);
 

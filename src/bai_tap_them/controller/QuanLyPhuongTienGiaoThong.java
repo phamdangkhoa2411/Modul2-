@@ -1,5 +1,9 @@
 package bai_tap_them.controller;
 
+
+import bai_tap_them.service.OtoService;
+import bai_tap_them.service.XeMayService;
+import bai_tap_them.service.XeTaiService;
 import bai_tap_them.service.impl.OtoServiceimpl;
 import bai_tap_them.service.impl.XeMayServiceimpl;
 import bai_tap_them.service.impl.XeTaiServiceimpl;
@@ -47,6 +51,9 @@ public class QuanLyPhuongTienGiaoThong {
     }
 
     public static void addNew() {
+        OtoService otoService = new OtoServiceimpl();
+        XeMayService xeMayService = new XeMayServiceimpl();
+        XeTaiService xeTaiService = new XeTaiServiceimpl();
         boolean check = true;
         int choice = 0;
         while (check) {
@@ -64,13 +71,13 @@ public class QuanLyPhuongTienGiaoThong {
             }
             switch (choice) {
                 case 1 :
-                    new OtoServiceimpl().addNewOto();
+                     otoService.addNewOto();
                     break;
                 case 2 :
-                    new XeMayServiceimpl().addNewXeMay();
+                     xeMayService.addNewXeMay();
                     break;
                 case 3:
-                    new XeTaiServiceimpl().addNewXeTai();
+                    xeTaiService.addNewXeTai();
                 case 4 :
                     displayMenu();
                     break;
@@ -82,6 +89,9 @@ public class QuanLyPhuongTienGiaoThong {
     public static void display (){
         boolean check = true;
         int choice = 0;
+        OtoService otoService = new OtoServiceimpl();
+        XeMayService xeMayService = new XeMayServiceimpl();
+        XeTaiService xeTaiService = new XeTaiServiceimpl();
         while (check) {
             System.out.println("1.  Hiển thị oto ");
             System.out.println("2.  Hiển thị xe máy ");
@@ -97,13 +107,13 @@ public class QuanLyPhuongTienGiaoThong {
             }
             switch (choice) {
                 case 1 :
-                    new OtoServiceimpl().displayOto();
+                    otoService.displayOto();
                     break;
                 case 2 :
-                    new XeMayServiceimpl().displayXeMay();
+                    xeMayService.displayXeMay();
                     break;
                 case 3 :
-                    new XeTaiServiceimpl().displayXeTai();
+                    xeTaiService.displayXeTai();
                     break;
                 case 4 :displayMenu();
                 break;
@@ -114,6 +124,9 @@ public class QuanLyPhuongTienGiaoThong {
     public static void delete (){
         boolean check = true;
         int choice = 0;
+        OtoService otoService = new OtoServiceimpl();
+        XeMayService xeMayService = new XeMayServiceimpl();
+        XeTaiService xeTaiService = new XeTaiServiceimpl();
         while (check) {
             System.out.println("1. xóa oto ");
             System.out.println("2.  xóa xe máy ");
@@ -128,13 +141,13 @@ public class QuanLyPhuongTienGiaoThong {
             }
             switch (choice){
                 case 1 :
-                    new OtoServiceimpl().deleteOto();
+                   otoService.deleteOto();
                     break;
                 case 2 :
-                    new XeMayServiceimpl().deleteXeMay();
+                    xeMayService.deleteXeMay();
                     break;
                 case 3 :
-                    new XeTaiServiceimpl().deleteXeTai();
+                    xeTaiService.deleteXeTai();
                     break;
                 case 4 :
                    displayMenu();
