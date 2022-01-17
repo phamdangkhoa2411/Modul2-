@@ -1,5 +1,6 @@
 package bai_tap_them.service.impl;
 
+import bai_tap_them.controller.QuanLyPhuongTienGiaoThong;
 import bai_tap_them.model.Oto;
 
 import bai_tap_them.service.OtoService;
@@ -14,10 +15,7 @@ public class OtoServiceimpl implements OtoService {
     Scanner scanner = new Scanner(System.in);
 
 
-    @Override
-    public  void deleteOto() {
 
-    }
 
     @Override
     public  void addNewOto() {
@@ -45,6 +43,34 @@ public class OtoServiceimpl implements OtoService {
         for (Oto oto : otoList) {
             System.out.println(oto);
 
+        }
+
+    }
+    @Override
+    public  void deleteOto() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("nhập biển số cần xóa");
+        String xoaBienso = scanner.nextLine();
+        boolean check = false;
+        for (int i = 0 ; i < otoList.size();i++){
+            System.out.println(otoList.get(i).getBienSoXe());
+            if (otoList.get(i).getBienSoXe().equals(xoaBienso)){
+                check = true;
+                System.out.println("Are you sure");
+                System.out.println("1 yes");
+                System.out.println("2 No");
+                int choice = Integer.parseInt(scanner.nextLine());
+                switch (choice){
+                    case 1 :
+                        otoList.remove(i);
+                        System.out.println("Đã xóa thành công");
+                        break;
+                    case 2 :
+                        QuanLyPhuongTienGiaoThong.displayMenu();
+                        break;
+
+                }
+            }
         }
 
     }
