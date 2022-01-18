@@ -1,9 +1,11 @@
 package ss12_java_collection_framework.bai_tap.service.impl;
 
+import javafx.scene.chart.BubbleChart;
 import ss12_java_collection_framework.bai_tap.model.Product;
 import ss12_java_collection_framework.bai_tap.service.ProductService;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -20,7 +22,7 @@ public class ProductImpl implements ProductService {
         System.out.print("Mời bạn nhập tên sản phẩm cần thêm:");
         String name = scanner.nextLine();
         System.out.println("Mời bạn nhập giá sản phẩm cần thêm:");
-        String gia = scanner.nextLine();
+        double gia =Double.parseDouble(scanner.nextLine());
         Product product = new Product(id, name, gia);
         productList.add(product);
 
@@ -36,7 +38,7 @@ public class ProductImpl implements ProductService {
                 System.out.println("Mời bạn nhập tên cần sửa: ");
                 String newName = scanner.nextLine();
                 System.out.println("Mời bạn nhập giá cần sửa: ");
-                String newGia = scanner.nextLine();
+                double newGia = Double.parseDouble(scanner.nextLine());
                 productList.get(i).setName(newName);
                 productList.get(i).setGia(newGia);
 
@@ -80,15 +82,27 @@ public class ProductImpl implements ProductService {
                     System.out.println("không tìm thấy sản phẩm");
                 }
         }
-        
+
 
         @Override
         public void increase () {
+            Collections.sort(productList);
+            for (Product product : productList) {
+                System.out.println(product);
+            }
 
-        }
+
+    }
 
         @Override
         public void decrease () {
+        Product newProduct = new Product();
+        Collections.sort(productList,newProduct);
+            for (Product product:productList) {
+                System.out.println(product);
+
+            }
 
         }
+
     }

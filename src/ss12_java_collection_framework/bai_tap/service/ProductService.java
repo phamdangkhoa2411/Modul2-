@@ -12,7 +12,7 @@ public interface ProductService<P> {
 
     void search();
 
-    void increase();
+    void increase(); // tăng
 
-    void decrease();
+    void decrease();// giảm
 }
