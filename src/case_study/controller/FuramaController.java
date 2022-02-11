@@ -1,6 +1,7 @@
 package case_study.controller;
 
 import case_study.service.impl.BookingServiceImpl;
+
 import case_study.service.impl.CustomerServiceImpl;
 import case_study.service.impl.EmployeeServiceImpl;
 import case_study.service.impl.FacilityServiceImpl;
@@ -72,13 +73,13 @@ public class FuramaController {
             }
             switch (choice) {
                 case 1:
-                    employeeService.display();
+                    employeeService.displayEmployee();
                     break;
                 case 2:
-                    employeeService.addNew();
+                    employeeService.addNewEmployee();
                     break;
                 case 3:
-                    employeeService.edit();
+                    employeeService.editEmployee();
                     break;
                 case 4:
                     displayMenu();
@@ -106,13 +107,13 @@ public class FuramaController {
             }
             switch (choice) {
                 case 1:
-                    customerService.display();
+                    customerService.displayCustomer();
                     break;
                 case 2:
-                    customerService.addNew();
+                    customerService.addNewCustomer();
                     break;
                 case 3:
-                    customerService.edit();
+                    customerService.editCustomer();
                     break;
                 case 4:
                     displayMenu();

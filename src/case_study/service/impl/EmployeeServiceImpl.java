@@ -2,19 +2,18 @@ package case_study.service.impl;
 
 import case_study.model.Person.Employee;
 import case_study.model.Person.Person;
-import case_study.service.IPersonService;
+import case_study.service.IEmployeeService;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class EmployeeServiceImpl implements IPersonService {
+public class EmployeeServiceImpl implements IEmployeeService {
     static List<Employee> employeeList = new ArrayList<>();
     static Scanner scanner = new Scanner(System.in);
 
 
-    @Override
-    public void addNew() {
+    public void addNewEmployee() {
         System.out.println("nhập id");
         String id = scanner.nextLine();
         System.out.println("nhập fullName");
@@ -41,16 +40,14 @@ public class EmployeeServiceImpl implements IPersonService {
 
     }
 
-    @Override
-    public void display() {
+    public void displayEmployee() {
         for (Employee employee:employeeList) {
             System.out.println(employee);
 
         }
 
     }
-    @Override
-    public void edit() {
+    public void editEmployee() {
         Scanner scanner =new Scanner(System.in);
         System.out.println("Nhập id cần sửa ");
         String idEdit = scanner.nextLine();
