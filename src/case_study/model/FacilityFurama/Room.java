@@ -1,12 +1,12 @@
 package case_study.model.FacilityFurama;
 
-public class RoomType extends Facility  {
+public class Room extends Facility  {
     private String freeService;
 
-    public RoomType() {
+    public Room() {
     }
 
-    public RoomType(int quantityOfBooking, String serviceName, String codeService, double areaUsable, int rent, int maxPeople, String rentType , String freeService) {
+    public Room(int quantityOfBooking, String serviceName, String codeService, double areaUsable, int rent, int maxPeople, String rentType , String freeService) {
         super(quantityOfBooking,serviceName,codeService,areaUsable,rent,maxPeople,rentType);
         this.freeService = freeService;
     }

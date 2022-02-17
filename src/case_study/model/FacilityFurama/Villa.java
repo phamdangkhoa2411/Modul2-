@@ -1,15 +1,17 @@
 package case_study.model.FacilityFurama;
 
-public class HouseType extends Facility {
+public class Villa extends Facility {
     private String roomStandard;
-    private  int quantityOfFloor;
-
-    public HouseType() {
+    private double poolArea;
+    private int quantityOfFloor;
+    public Villa() {
     }
 
-    public HouseType(int quantityOfBooking, String serviceName, String codeService, double areaUsable, int rent, int maxPeople, String rentType,String roomStandard, int quantityOfFloor) {
-        super(quantityOfBooking,serviceName,codeService,areaUsable,rent,maxPeople,rentType);
+    public Villa(int quantityOfBooking, String serviceName, String codeService,
+                 double areaUsable, int rent, int maxPeople, String rentType, String roomStandard, double poolArea, int quantityOfFloor) {
+        super(quantityOfBooking, serviceName, codeService, areaUsable, rent, maxPeople, rentType);
         this.roomStandard = roomStandard;
+        this.poolArea = poolArea;
         this.quantityOfFloor = quantityOfFloor;
     }
 
@@ -19,6 +21,14 @@ public class HouseType extends Facility {
 
     public void setRoomStandard(String roomStandard) {
         this.roomStandard = roomStandard;
+    }
+
+    public double getPoolArea() {
+        return poolArea;
+    }
+
+    public void setPoolArea(double poolArea) {
+        this.poolArea = poolArea;
     }
 
     public int getQuantityOfFloor() {
@@ -31,9 +41,11 @@ public class HouseType extends Facility {
 
     @Override
     public String toString() {
-        return "HouseType{" +
+        return "VillaType{" +
                 "roomStandard='" + roomStandard + '\'' +
+                ", poolArea=" + poolArea +
                 ", quantityOfFloor=" + quantityOfFloor +
                 '}';
     }
+
 }

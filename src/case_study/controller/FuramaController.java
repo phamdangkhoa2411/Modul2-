@@ -142,7 +142,7 @@ public class FuramaController {
             }
             switch (choice) {
                 case 1:
-                    facilityService.display();
+                    facilityService.displayFacilityService();
                     break;
                 case 2:
                     addNewFacilityMenu();
@@ -174,19 +174,19 @@ public class FuramaController {
             }
             switch (choice) {
                 case 1:
-//                    facilityService.addNewVilla();
+                   facilityService.addNewVilla();
                     displayFacilityMenu();
                     break;
                 case 2:
-//                    facilityService.adđNewHouse();
+                   facilityService.addNewHouse();
                     displayFacilityMenu();
                     break;
                 case 3:
-//                    facilityService.addNewRoom();
+                  facilityService.addNewRoom();
                     displayFacilityMenu();
                     break;
                 case 4:
-//                    check = false;
+                   check = false;
                     displayFacilityMenu();
                     break;
             }

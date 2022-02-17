@@ -1,9 +1,11 @@
 package case_study.service.impl;
 
+import case_study.model.Person.Customer;
 import case_study.model.Person.Employee;
 import case_study.model.Person.Person;
 import case_study.service.IEmployeeService;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -11,6 +13,43 @@ import java.util.Scanner;
 public class EmployeeServiceImpl implements IEmployeeService {
     static List<Employee> employeeList = new ArrayList<>();
     static Scanner scanner = new Scanner(System.in);
+    static {
+        employeeList=readerEmployee();
+    }
+    public void write(){
+        try {
+            FileWriter fileWriter = new FileWriter("E:\\Codegym\\Modul2\\src\\case_study\\data\\employee.csv");
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            for (Employee employee : employeeList){
+                bufferedWriter.write(employee.getId()+","+employee.getFullName()+","+employee.getDayOfBirth()+","+employee.getSex()+
+                        ","+employee.getIdentityCardNo()+","+employee.getPhoneNo()+","+employee.getEmail()+","+employee.getEducation()+
+                        ","+employee.getPoisition()+","+employee.getSalary());
+                bufferedWriter.newLine();
+            }
+
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }
+    }
+    public static List<Employee> readerEmployee(){
+        try {
+            FileReader fileReader = new FileReader(new File("E:\\Codegym\\Modul2\\src\\case_study\\data\\employee.csv"));
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String line ;
+            String[] temp ;
+            while ((line=bufferedReader.readLine())!=null){
+                temp = line.split(",");
+                Employee employee = new Employee(temp[0],temp[1],temp[2],temp[3],temp[4],temp[5],temp[6],temp[7],temp[8],Integer.parseInt(temp[9]));
+                employeeList.add(employee);
+            }
+            bufferedReader.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }
+        return employeeList;
+    }
 
 
     public void addNewEmployee() {
@@ -36,6 +75,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
         double salary = scanner.nextDouble();
         Employee employee = new Employee(id,fullName,dayOfBirth,sex,identityCardNo,phoneNo,email,education,poisition,salary);
         employeeList.add(employee);
+        write();
 
 
     }
