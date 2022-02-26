@@ -123,7 +123,7 @@ public class sanphamnhapkhauserviceimpl implements Sanphamnhapkhauservice {
                     break;
                 }
             }
-        System.out.println("nhập thuế nhập khẩu ");
+
         String thuenhapkhau ;
             while (true) {
                 System.out.println("nhập thuế nhập khẩu ");

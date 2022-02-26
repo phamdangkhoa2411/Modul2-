@@ -31,7 +31,10 @@ public class Oto extends PhuongTienGiaoThong {
 
     @Override
     public String toString() {
-        return "Oto{" +
+        return "Oto{" + "sokhung='" +getBienSoXe()+ '\'' +
+                ", namehang='" + getNamehang() + '\'' +
+                ", YearOfmanuFacture=" + getYearOfmanuFacture() +
+                ", ChuXe='" + getChuXe() + '\'' +
                 "SoChoNgoi=" + SoChoNgoi +
                 ", LoaiXe='" + LoaiXe + '\'' +
                 '}';
